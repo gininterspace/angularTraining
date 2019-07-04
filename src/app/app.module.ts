@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { rootRoutes } from "./router/root.routes";
-import { RootModules } from "./modules/root.modules";
+import { rootRoutes } from "./router/";
+import { RootModules } from "./modules/";
 
 @NgModule( {
   declarations: [
@@ -16,7 +16,7 @@ import { RootModules } from "./modules/root.modules";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRoutes, { useHash: true }),
+    RouterModule.forRoot( rootRoutes, { useHash: true } ),
     RootModules
   ],
   providers: [],

@@ -3,7 +3,7 @@ import { FirstComponentComponent } from "../first-component/first-component.comp
 import { RouterModule } from "@angular/router";
 
 @NgModule( {
-  imports: [RouterModule],
+  imports: [ RouterModule ],
   declarations: [ FirstComponentComponent ],
   exports: [ FirstComponentComponent ]
 } )

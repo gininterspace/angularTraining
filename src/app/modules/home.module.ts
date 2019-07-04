@@ -3,7 +3,7 @@ import { HomeComponent } from "../home/home.component";
 import { RouterModule } from "@angular/router";
 
 @NgModule( {
-  imports: [RouterModule],
+  imports: [ RouterModule ],
   declarations: [ HomeComponent ],
   exports: [ HomeComponent ]
 } )
