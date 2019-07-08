@@ -1,0 +1,8 @@
+<form (ngSubmit)="generateSql()">
+  <label for="fieldName">fieldName</label>
+  <input type="text" name="fieldName" [(ngModel)]="fieldName" id="fieldName" required>
+  <input type="file" name="ids" (change)="getTextContent($event)">
+  <input type="submit" name="generate" value="generate">
+  <textarea name="result" id="" cols="30" [(ngModel)]="generatedSql" rows="10"></textarea>
+</form>
+
