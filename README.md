@@ -2,6 +2,14 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
+## Install nodejs@v6.6.0 
+
+Download the installer from [here](https://nodejs.org/download/release/v6.6.0/) and install npm.
+
+## Install angular-cli by npm on the command line
+
+    npm install -g angular-cli@1.0.0-beta.15
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
