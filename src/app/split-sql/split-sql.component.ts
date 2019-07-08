@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 const openBracket: string = '( \n';
 const closeBracket: string = ' ) ';
-const maxSize: number = 10;
+const maxSize: number = 20;
 
 @Component( {
   templateUrl: './split-sql.component.html',
@@ -14,7 +14,6 @@ export class SplitSqlComponent implements OnInit {
   private idsContext: string;
   private idsArray: string[];
   private generatedSql: string = "WHERE ";
-
 
   constructor() {
   }
@@ -29,7 +28,10 @@ export class SplitSqlComponent implements OnInit {
   }
 
   splitIdsBy() {
-    this.generatedSql = this.generatedSql.concat( this.fieldName ).concat( ' IN ' ).concat( openBracket );
+    this.generatedSql = this.generatedSql
+      .concat( this.fieldName )
+      .concat( ' IN ' )
+      .concat( openBracket );
     let partIndex = 0;
     let elementIndex = 1;
     for ( let element of this.idsArray ) {
@@ -45,18 +47,25 @@ export class SplitSqlComponent implements OnInit {
         this.addElements( element );
       }
     }
-    this.generatedSql = this.generatedSql.concat( closeBracket ).concat( ';' );
+    this.generatedSql = this.generatedSql
+      .concat( closeBracket )
+      .concat( ';' );
   }
 
   addElements( element: string, comma: string = ',' ) {
     if ( element.length > 0 ) {
-      this.generatedSql = this.generatedSql.concat( element ).concat( comma );
+      this.generatedSql = this.generatedSql
+        .concat( element )
+        .concat( comma );
     }
   }
 
   addOrStatement() {
     const orStatement: string = ` OR ${this.fieldName} IN `;
-    this.generatedSql = this.generatedSql.concat( closeBracket ).concat( orStatement ).concat( openBracket );
+    this.generatedSql = this.generatedSql
+      .concat( closeBracket )
+      .concat( orStatement )
+      .concat( openBracket );
   }
 
   getTextContent( event ) {

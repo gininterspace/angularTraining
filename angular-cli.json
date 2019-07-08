@@ -15,9 +15,24 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/bootstrap/dist/css/bootstrap-theme.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/ionicons/css/ionicons.css",
+        "../node_modules/bootstrap-daterangepicker/daterangepicker.css",
+        "../node_modules/perfect-scrollbar/src/perfect-scrollbar.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/moment/min/moment.min.js",
+        "../node_modules/bootstrap-daterangepicker/daterangepicker.js",
+        "../node_modules/perfect-scrollbar/src/perfect-scrollbar.js",
+        "../node_modules/core-js/client/shim.min.js",
+        "../node_modules/zone.js/dist/zone.js",
+        "../node_modules/reflect-metadata/Reflect.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
