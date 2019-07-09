@@ -9,7 +9,8 @@ export class SplitSqlComponent implements OnInit {
 
   private fieldName: string;
   private fileContext: string;
-  private generatedSql: string;
+  private generatedQuery: string = "";
+  private header: string = "";
 
   constructor() {
   }
@@ -17,10 +18,9 @@ export class SplitSqlComponent implements OnInit {
   ngOnInit() {
   }
 
-  generateSql() {
-    this.generatedSql = "WHERE ";
-    let splitSqlService = new SplitSqlService( this.fileContext, this.fieldName );
-    this.generatedSql = splitSqlService.generateSql();
+  generateQuery() {
+    const splitSqlService: SplitSqlService = new SplitSqlService( this.fileContext, this.fieldName );
+    this.generatedQuery = this.header.concat(splitSqlService.generateQuery());
   }
 
   getFileContent( event ) {
@@ -29,6 +29,7 @@ export class SplitSqlComponent implements OnInit {
       this.fileContext = event.target.result;
       reader.onload = ( event: any ) => {
         this.fileContext = event.target.result;
+        this.generateQuery();
       };
       reader.readAsText( event.target.files[ 0 ] );
     }

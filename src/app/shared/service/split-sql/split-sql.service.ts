@@ -5,7 +5,7 @@ const CLOSE_BRACKET: string = ' ) ';
 const MAX_SIZE: number = 20;
 const END_OF_QUERY_CHARACTER: string = ';';
 const COMMA_CHARACTER: string = ',';
-const WHERE_WORD: string = 'WHERE ';
+const WHERE_WORD: string = '\n WHERE ';
 const IN_WORD: string = ' IN ';
 const OR_WORD: string = ' OR ';
 const END_LINE: string = '\n';
@@ -14,7 +14,7 @@ const EMPTY_CHARACTER: string = '';
 @Injectable()
 export class SplitSqlService {
   private input: string;
-  private sql: string;
+  private generatedQuery: string;
   private fieldName: string;
   private partitionIndex: number = 0;
 
@@ -23,15 +23,15 @@ export class SplitSqlService {
     this.fieldName = fieldName;
   }
 
-  generateSql() {
-    this.sql = WHERE_WORD;
+  generateQuery() {
+    this.generatedQuery = WHERE_WORD;
     let idsArray: string[] = this.input.split( END_LINE );
     this.splitIdsBy( idsArray );
-    return this.sql;
+    return this.generatedQuery;
   }
 
   splitIdsBy( idsArray: string[] ) {
-    this.sql = this.sql
+    this.generatedQuery = this.generatedQuery
       .concat( this.fieldName )
       .concat( IN_WORD )
       .concat( OPEN_BRACKET );
@@ -51,7 +51,7 @@ export class SplitSqlService {
 
   addElements( element: string, comma: string = COMMA_CHARACTER ) {
     if ( element.trim().length > 0 ) {
-      this.sql = this.sql
+      this.generatedQuery = this.generatedQuery
         .concat( element )
         .concat( comma );
 
@@ -60,7 +60,7 @@ export class SplitSqlService {
   }
 
   addOrStatement() {
-    this.sql = this.sql
+    this.generatedQuery = this.generatedQuery
       .concat( CLOSE_BRACKET )
       .concat( OR_WORD )
       .concat( this.fieldName )
@@ -69,11 +69,11 @@ export class SplitSqlService {
   }
 
   cutTheLastComma() {
-    this.sql = this.sql.replace( /(,)$/, '' );
+    this.generatedQuery = this.generatedQuery.replace( /(,)$/, '' );
   }
 
   closeSqlQuery(): void {
-    this.sql = this.sql
+    this.generatedQuery = this.generatedQuery
       .concat( CLOSE_BRACKET )
       .concat( END_OF_QUERY_CHARACTER );
   }

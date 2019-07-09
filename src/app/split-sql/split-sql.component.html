@@ -1,5 +1,12 @@
 <div class="container form-horizontal ">
-  <form (ngSubmit)="generateSql()" class="col-xs-12">
+  <form  class="col-xs-12">
+    <div class="col-xs-12 form-group">
+      <label for="result" class="col-xs-12">Sql header </label>
+      <div class="col-xs-12">
+      <textarea name="header" class="col-xs-12 col-sm-7" id="header" cols="30"
+                [(ngModel)]="header" rows="10"></textarea>
+      </div>
+    </div>
     <div class="col-xs-12  form-group">
       <label for="fieldName" class="col-xs-12 col-sm-3">Field name</label>
       <div class="col-xs-12 col-sm-4">
@@ -8,19 +15,15 @@
       </div>
     </div>
     <div class="col-xs-12  form-group">
-      <label for="text-file" class="col-xs-12 col-sm-3">Text file</label>
+      <label for="text-file" class="col-xs-12 col-sm-3">Ids file</label>
       <input type="file" id="text-file" class="col-xs-12 col-sm-7" name="ids"
              (change)="getFileContent($event)" required>
-    </div>
-    <div class="col-xs-12  form-group">
-      <input type="submit" class="col-xs-12 col-sm-2 btn btn-success" name="generate"
-             value="generate">
     </div>
     <div class="col-xs-12 form-group">
       <label for="result" class="col-xs-12">Result</label>
       <div class="col-xs-12">
       <textarea name="result" class="col-xs-12 col-sm-7" id="result" cols="30"
-                [(ngModel)]="generatedSql" rows="10"></textarea>
+                [(ngModel)]="generatedQuery" rows="10"></textarea>
       </div>
     </div>
   </form>
