@@ -5,7 +5,12 @@ import { FirstChildComponent } from "../first-component/first-child/first-child.
 export const firstRoutes: Routes = [
   {
     path: 'first', component: FirstComponentComponent, children: [
-    { path: 'child', component: FirstChildComponent, pathMatch: 'full' }
+    {
+      path: 'child',
+      component: FirstChildComponent,
+      outlet: '123123',
+      pathMatch: 'full'
+    }
   ]
   }
 ];

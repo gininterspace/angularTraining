@@ -7,6 +7,9 @@ import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 import { rootRoutes } from "../router/root.routes";
 import { SplitSqlModule } from "./split-sql.module";
+import { TestComponentModule } from "../test-component/test-component.module";
+import { AbcComponentModule } from "../abc-component/abc-component.module";
+import { AbcChildModule } from "../abc-component/abc-child/abc-child.module";
 
 @NgModule( {
   imports: [
@@ -16,7 +19,10 @@ import { SplitSqlModule } from "./split-sql.module";
     RouterModule.forRoot( rootRoutes, { useHash: true } ),
     FirstComponentModule,
     HomeModule,
-    SplitSqlModule
+    SplitSqlModule,
+    TestComponentModule,
+    AbcComponentModule,
+    AbcChildModule
   ],
   exports: [ RouterModule ]
 } )
