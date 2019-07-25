@@ -2,9 +2,10 @@
   <p>
     first-component works!
   </p>
-  <!--<router-outlet></router-outlet>-->
-  <app-first-child></app-first-child>
-  <app-test-component></app-test-component>
+  <p>Child attribute here: {{child?.firstChildAttribute}}</p>
+  <router-outlet (activate)="activate($event)"></router-outlet>
+  <!--<app-first-child></app-first-child>-->
+  <!--<app-test-component></app-test-component>-->
 </div>
 <a routerLink="/">Go back Home</a>
 

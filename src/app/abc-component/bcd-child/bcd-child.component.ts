@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bcd-child.component.css']
 })
 export class BcdChildComponent implements OnInit {
-
+  firstAttribute: string = "not set";
   constructor() { }
 
   ngOnInit() {
+    console.log( "child called" );
   }
 
 }

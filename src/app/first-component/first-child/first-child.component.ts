@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstChildComponent implements OnInit {
 
+  firstChildAttribute: string;
   constructor() { }
 
   ngOnInit() {
+    this.firstChildAttribute = "first child attribute";
   }
 
+  changeAttr() {
+    this.firstChildAttribute += " changed ";
+  }
 }

@@ -18,7 +18,7 @@ export class SplitSqlService {
   private fieldName: string;
   private partitionIndex: number = 0;
 
-  constructor( input: string, fieldName: string ) {
+  constructor(input: string, fieldName: string ) {
     this.input = input;
     this.fieldName = fieldName;
   }

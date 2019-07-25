@@ -8,7 +8,6 @@ export const firstRoutes: Routes = [
     {
       path: 'child',
       component: FirstChildComponent,
-      outlet: '123123',
       pathMatch: 'full'
     }
   ]

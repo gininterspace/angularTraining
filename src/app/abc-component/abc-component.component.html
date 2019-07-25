@@ -1,8 +1,10 @@
 <p>
   parents -component works!
 </p>
+{{parentAttribute}}
 
-<app-bcd-child></app-bcd-child>
-<hr>
-<app-abc-child></app-abc-child>
+<router-outlet (activate)="takeDataFromChild($event)"></router-outlet>
 
+<!--<app-bcd-child></app-bcd-child>-->
+<!--<hr>-->
+<!--<app-abc-child></app-abc-child>-->
